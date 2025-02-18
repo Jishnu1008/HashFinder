@@ -19,10 +19,10 @@ hash_length = {
     128: ["SHA512", "SHA3_512", "BLAKE2B"]
 }
 try:
-    def MD(hash,hash_name):
+    def MD(hash,hash_name,filename):
         for rel_hash in hash_name:
             if rel_hash == 'MD5':
-             with open("rockyou.txt",'r',encoding='latin-1') as file:
+             with open(filename,'r',encoding='latin-1') as file:
                 for line in file:
                     line=line.strip()
                     hasher=MD5.new(line.encode()).hexdigest()
@@ -31,7 +31,7 @@ try:
                         exit()
              console.print("[red][-] Not an MD5 hash[/red]")
             elif rel_hash == 'MD4':
-                with open("rockyou.txt",'r',encoding='latin-1') as file:
+                with open(filename,'r',encoding='latin-1') as file:
                     for line in file:
                         line=line.strip()
                         hasher=MD4.new(line.encode()).hexdigest()
@@ -40,7 +40,7 @@ try:
                             exit()
                 console.print("[red][-] Not an MD4 hash[/red]")
             else:
-                with open("rockyou.txt",'r',encoding='latin-1') as file:
+                with open(filename,'r',encoding='latin-1') as file:
                     for line in file:
                         line=line.strip()
                         hasher=MD2.new(line.encode()).hexdigest()
@@ -49,10 +49,10 @@ try:
                             exit()
                 console.print("[red][-] Not an MD2 hash\n[-] May be someother MD hash.[/red]")
             
-    def Sha_40(hash,hash_name):
+    def Sha_40(hash,hash_name,filename):
         for rel_hash in hash_name:
             if rel_hash == 'SHA1':
-             with open("rockyou.txt",'r',encoding='latin-1') as file:
+             with open(filename,'r',encoding='latin-1') as file:
                 for line in file:
                     line=line.strip()
                     hasher=SHA1.new(line.encode()).hexdigest()
@@ -61,7 +61,7 @@ try:
                         exit()
              console.print("[/red][-] Not an SHA1 hash[/red]")
             else:
-                with open("rockyou.txt",'r',encoding='latin-1') as file:
+                with open(filename,'r',encoding='latin-1') as file:
                     for line in file:
                         line=line.strip()
                         hasher=RIPEMD.new(line.encode()).hexdigest()
@@ -70,10 +70,10 @@ try:
                             exit()
                 console.print("[red][-] Not an RIPEMD_160 hash\n[-] May be someother hash.[/red]")
 
-    def Sha_56(hash,hash_name):
+    def Sha_56(hash,hash_name,filename):
         for rel_hash in hash_name:
             if rel_hash == 'SHA224':
-             with open("rockyou.txt",'r',encoding='latin-1') as file:
+             with open(filename,'r',encoding='latin-1') as file:
                 for line in file:
                     line=line.strip()
                     hasher=SHA224.new(line.encode()).hexdigest()
@@ -82,7 +82,7 @@ try:
                         exit()
              console.print("[red][-] Not an SHA224 hash[/red]")
             else:
-                with open("rockyou.txt",'r',encoding='latin-1') as file:
+                with open(filename,'r',encoding='latin-1') as file:
                     for line in file:
                         line=line.strip()
                         hasher=SHA3_224.new(line.encode()).hexdigest()
@@ -91,10 +91,10 @@ try:
                             exit()
                 console.print("[red][-] Not an SHA3_224 hash\n[-] May be someother hash.[/red]")
             
-    def Sha_64(hash,hash_name):
+    def Sha_64(hash,hash_name,filename):
         for rel_hash in hash_name:
             if rel_hash == 'SHA256':
-                with open("rockyou.txt",'r',encoding='latin-1') as file:
+                with open(filename,'r',encoding='latin-1') as file:
                     for line in file:
                         line=line.strip()
                         hasher=SHA256.new(line.encode()).hexdigest()
@@ -103,7 +103,7 @@ try:
                             exit()
                 console.print("[red][-] Not an SHA256 hash[/red]")
             elif rel_hash == 'SHA3_256':
-                with open("rockyou.txt",'r',encoding='latin-1') as file:
+                with open(filename,'r',encoding='latin-1') as file:
                     for line in file:
                         line=line.strip()
                         hasher=SHA3_256.new(line.encode()).hexdigest()
@@ -112,7 +112,7 @@ try:
                             exit()
                 console.print("[red][-] Not an SHA3_256 hash[/red]")
             else:
-                with open("rockyou.txt",'r',encoding='latin-1') as file:
+                with open(filename,'r',encoding='latin-1') as file:
                     for line in file:
                         line=line.strip()
                         hasher=BLAKE2s.new(data=line.encode()).hexdigest()
@@ -121,10 +121,10 @@ try:
                             exit()
                 console.print("[red][-] Not an BLAKE2S hash\n[-] May be someother hash.[/red]")
 
-    def Sha_96(hash,hash_name):
+    def Sha_96(hash,hash_name,filename):
         for rel_hash in hash_name:
             if rel_hash == 'SHA384':
-             with open("rockyou.txt",'r',encoding='latin-1') as file:
+             with open(filename,'r',encoding='latin-1') as file:
                 for line in file:
                     line=line.strip()
                     hasher=SHA384.new(line.encode()).hexdigest()
@@ -133,7 +133,7 @@ try:
                         exit()
              console.print("[red][-] Not an SHA384 hash[/red]")
             else:
-                with open("rockyou.txt",'r',encoding='latin-1') as file:
+                with open(filename,'r',encoding='latin-1') as file:
                     for line in file:
                         line=line.strip()
                         hasher=SHA3_384.new(line.encode()).hexdigest()
@@ -142,10 +142,10 @@ try:
                             exit()
                 console.print("[red][-] Not an SHA3_384 hash\n[-] May be someother hash.[/red]")
 
-    def Sha_128(hash,hash_name):
+    def Sha_128(hash,hash_name,filename):
         for rel_hash in hash_name:
             if rel_hash == 'SHA512':
-             with open("rockyou.txt",'r',encoding='latin-1') as file:
+             with open(filename,'r',encoding='latin-1') as file:
                 for line in file:
                     line=line.strip()
                     hasher=SHA512.new(line.encode()).hexdigest()
@@ -154,7 +154,7 @@ try:
                         exit()
              console.print("[red][-] Not an SHA512 hash[/red]")
             elif rel_hash == 'SHA3_512':
-                with open("rockyou.txt",'r',encoding='latin-1') as file:
+                with open(filename,'r',encoding='latin-1') as file:
                     for line in file:
                         line=line.strip()
                         hasher=SHA3_512.new(line.encode()).hexdigest()
@@ -163,7 +163,7 @@ try:
                             exit()
                 console.print("[red][-] Not an SHA3_512 hash[/red]")
             else:
-                with open("rockyou.txt",'r',encoding='latin-1') as file:
+                with open(filename,'r',encoding='latin-1') as file:
                     for line in file:
                         line=line.strip()
                         hasher=BLAKE2b.new(data=line.encode()).hexdigest()
@@ -186,17 +186,17 @@ try:
          if condition.lower() == 'y':
             time.sleep(0.5)
             if len(hash)==32:
-                MD(hash,hash_name)
+                MD(hash,hash_name,filename)
             elif len(hash)==40:
-                Sha_40(hash,hash_name)
+                Sha_40(hash,hash_name,filename)
             elif len(hash)==56:
-                Sha_56(hash,hash_name)
+                Sha_56(hash,hash_name,filename)
             elif len(hash)==64:
-                Sha_64(hash,hash_name)
+                Sha_64(hash,hash_name,filename)
             elif len(hash)==96:
-                Sha_96(hash,hash_name)
+                Sha_96(hash,hash_name,filename)
             else:
-                Sha_128(hash,hash_name)
+                Sha_128(hash,hash_name,filename)
             exit()
          elif condition.lower() == 'n':
                 exit()
@@ -204,11 +204,12 @@ try:
             console.print("[red][!] Please give a valid answer. [/red]")
             time.sleep(1)
             condition=input("[+] Y or N ") 
-    if len(sys.argv)==3:
+    if len(sys.argv)==4:
         mode = sys.argv[1]
         if mode == "-i":
             console.print(pyfiglet.figlet_format("HashFinder",font="slant"))
             hash = sys.argv[2]
+            filename=sys.argv[3]
             HashID(hash)
         else:
             console.print("[red][!] Please run the command 'hasher.py -h' to get help and it displays the relevant options to use the commands.[/red]")
@@ -217,10 +218,10 @@ try:
             console.print("[yellow][+] Usage: hasher.py -i <hash>[/yellow]\n[yellow][+] Options:\n  [+] -i <hash> : To find the hash type and the original text for the given hash.[/yellow]")
         else:
             console.print("[red][!] Please run the command 'hasher.py -h' to get help and it displays the relevant options to use the commands.[/red]")
-    elif  len(sys.argv)>3:
-        console.print("[red][!] Need two arguments only.[/red]\n[red][!] Please run the command 'hasher.py -h' to get help and it displays the relevant options to use the commands.[/red]")
+    elif  len(sys.argv)>4:
+        console.print("[red][!] Need three arguments only.[/red]\n[red][!] Please run the command 'hasher.py -h' to get help and it displays the relevant options to use the commands.[/red]")
     else:
-        console.print("[red][!] Need two arguments to run.[/red]\n[red][!] Please run the command 'hasher.py -h' to get help and it displays the relevant options to use the commands.[/red]")
+        console.print("[red][!] Need three arguments to run.[/red]\n[red][!] Please run the command 'hasher.py -h' to get help and it displays the relevant options to use the commands.[/red]")
 except KeyboardInterrupt:
     print("Keyboard Interrupt detected! Exiting program.")
     time.sleep(2)
